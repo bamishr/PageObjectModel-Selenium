@@ -62,6 +62,26 @@ public class TestBase {
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		
+		 public static void initialization(){
+                String browserName = prop.getProperty("browser");
+
+                if(browserName.equals("chrome")){
+                        System.setProperty("webdriver.chrome.driver", "C:/Users/IBM_ADMIN/Downloads/chromedriver_win32 (4)/chromedriver.exe");
+                        driver = new ChromeDriver();
+                }
+                else if(browserName.equals("FF")){
+                        System.setProperty("webdriver.gecko.driver", "C:/Users/IBM_ADMIN/Downloads/geckodriver-v0.19.1-win64/geckodriver.exe");
+                        driver = new FirefoxDriver();
+
+                }
+
+
+                e_driver = new EventFiringWebDriver(driver);
+                // Now create object of EventListerHandler to register it with EventFiringWebDriver
+                eventListener = new WebEventListener();
+                e_driver.register(eventListener);
+TestBase.java [dos] (13:12 26/09/2020)                                                                                                                                                                                    1,1 Top
+"TestBase.java" [dos] 77L, 
 		driver.get(prop.getProperty("url"));
 		
 	}
