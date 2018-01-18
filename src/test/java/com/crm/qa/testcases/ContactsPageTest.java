@@ -58,7 +58,7 @@ public class ContactsPageTest extends TestBase{
 		Assert.assertTrue(contactsPage.verifyContactsLabel(), "contacts label is missing on the page");
 	}
 	
-	@Test(priority=2)
+	/* @Test(priority=2)
 	public void selectSingleContactsTest(){
 		contactsPage.selectContactsByName("test2 test2");
 	}
@@ -68,7 +68,7 @@ public class ContactsPageTest extends TestBase{
 		contactsPage.selectContactsByName("test2 test2");
 		contactsPage.selectContactsByName("ui uiii");
 
-	}
+	} */
 	
 	@DataProvider
 	public Object[][] getCRMTestData(){
