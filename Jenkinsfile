@@ -24,6 +24,7 @@ pipeline {
 
         stage ('test') {
                     steps {
+					   bat "mvn dependency::tree"
                        bat "mvn clean install -U"
                     }
         }
